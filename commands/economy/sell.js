@@ -15,7 +15,7 @@ module.exports.run = async (client, message, args, level, Discord, eco) => {
   }
 
   client.items.remove(message.author.id, `${item.name} - ID: ${item.id}`);
-  const add = await eco.AddToBalance(message.author.id, item.price);
+  const add = await eco.addBalance(message.author.id, item.price);
   return message.success(`Successfully Sold ${item.name}!`, `**${message.member.displayName}**, You successfully sold **${item.name}** and got your money back!\nYour new balance is ${client.emoji.money} \`${add.newbalance.toLocaleString()}\` coins!`);
 };
 
