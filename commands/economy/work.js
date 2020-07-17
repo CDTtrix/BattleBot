@@ -6,7 +6,7 @@ module.exports.run = async (client, message, args, level, Discord, eco) => {
   const rJob = Math.floor(Math.random() * jobs.length);
 
   const final = `${characters[rChar]}'s ${jobs[rJob]}`;
-  const output = await eco.Work(message.author.id, {
+  const output = await eco.ecoWork(message.author.id, {
     failurerate: 20,
     money: Math.floor(Math.random() * 5000),
     jobs: [],
